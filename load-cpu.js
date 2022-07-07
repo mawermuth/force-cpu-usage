@@ -2,11 +2,13 @@ var shouldRun = true;
 var cluster = require('cluster');
 var numCPUs = require('os').cpus().length;
 
-if (cluster.isMaster) {
-    // Fork workers.
-    for (var i = 0; i < numCPUs; i++) {
-        cluster.fork();
-    }
+function loadCpu(){
+	if (cluster.isMaster) {
+		// Fork workers.
+		for (var i = 0; i < numCPUs; i++) {
+			cluster.fork();
+		}
+	}
 }
 
 function blockCpu() {
@@ -19,8 +21,9 @@ function blockCpu() {
 
 function start() {
 	shouldRun = true;
-	blockCpu();
-	setTimeout(stop, 1000000000000);
+	// blockCpu();
+	// setTimeout(stop, 1000);
+	setInterval(loadCpu, 1000);
 }
 
 function stop() {
