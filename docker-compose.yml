@@ -3,7 +3,7 @@ services:
   app:
     build:
       context: .
-    command: node load-cpu.js
+    command: nodemon
     ports: 
      - 3000:3000
     volumes:

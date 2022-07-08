@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node load-cpu.js"
+    "start": "nodemon"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cluster": "^0.7.7"
+    "cluster": "^0.7.7",
+    "nodemon": "^2.0.19"
   }
 }

@@ -4,7 +4,8 @@ WORKDIR /app/
 ADD package.json .
 
 RUN npm install
+RUN npm install nodemon -g
 
-ADD . .
+ADD . /app/
 
-CMD [ "node ./load-cpu.js" ]
+CMD [ "nodemon" ]

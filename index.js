@@ -23,7 +23,7 @@ function start() {
 	shouldRun = true;
 	// blockCpu();
 	// setTimeout(stop, 1000);
-	setInterval(loadCpu, 1000);
+	setInterval(loadCpu, 300);
 }
 
 function stop() {
